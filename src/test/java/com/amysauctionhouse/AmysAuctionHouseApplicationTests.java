@@ -1,4 +1,4 @@
-package com.amysauctionhouse.auctionmanager;
+package com.amysauctionhouse;
 
 
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class AuctionManagerApplicationTests {
+public class AmysAuctionHouseApplicationTests {
 
     @Test
     public void contextLoads() {

@@ -3,4 +3,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'auction-manager'
+rootProject.name = 'amys-auction-house'
