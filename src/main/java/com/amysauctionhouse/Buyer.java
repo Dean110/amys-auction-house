@@ -1,13 +1,8 @@
 package com.amysauctionhouse;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.apache.commons.validator.routines.EmailValidator;
 
 public class Buyer {
-
-	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
-			Pattern.CASE_INSENSITIVE);
-
 	private String name;
 	private String userName;
 
@@ -26,13 +21,12 @@ public class Buyer {
 	public void setUserName(String userName) {
 		if (isValidUserName(userName)) {
 			this.userName = userName;
-		} else {
-			this.userName = "";
+		}else {
+			throw new InvalidUserNameException("Invalid email address: "+ userName);
 		}
 	}
 
 	private boolean isValidUserName(String userName) {
-		Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(userName);
-		return matcher.find();
+		return EmailValidator.getInstance().isValid(userName);
 	}
 }
